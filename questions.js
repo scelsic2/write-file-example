@@ -70,10 +70,17 @@ const { anotherName: myName, age, info} = {
 
 console.log(info)
 
+function genLicense(type) {
+    return `License Type: ${type}`;
+}
+
+const licenseType = genLicense("MIT")
+console.log(licenseType)
+
 const fs = require("fs");
 // fs is file system
 
-fs.writeFile("./data.txt", "Here is our data", (err) => {
+fs.writeFile("./data.txt", licenseType, (err) => {
 // first parameter is type of the file and the next parameter is the data we want to add to the file
 // third parameter is a callback function
 // YOUR CALLBACK FUNCTIONS ALLOWS YOU TO DO SOMETHING ONCE YOUR FUNCTION IS DONE
